@@ -4,12 +4,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: setup v compiler
-      - run: "apt install gcc"
-      - run: "git clone https://github.com/vlang/v ${{runner.workspace}}/v"
-      - run: "cd v"
-      - run: "make"
-      - run: ".\\v symlink"
-      - run: "cd .."
+        run: | 
+          apt install gcc
+          git clone https://github.com/vlang/v ${{runner.workspace}}/v
+          cd v
+          make
+          .\\v symlink
+          cd ..
       - name: compile v code
         uses: actions/checkout@v2
       - run: "v -cc gcc -prod -gc boehm -show-timings -compress ."

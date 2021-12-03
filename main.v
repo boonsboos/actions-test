@@ -1,4 +1,2 @@
-fn main() {
-	println('hello world')
-	println('foo')
-}
+println('hello world')
+println('foo')

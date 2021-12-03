@@ -12,9 +12,8 @@ jobs:
           cd ${{runner.workspace }}/v
           make
           ./v symlink
-      - name: compile v code
+      - name: checkount v code
         uses: actions/checkout@v2
-      - run: |
-          v -cc gcc -prod -gc boehm -show-timings -compress -o test .
-          ls -la .
-          test
+      - name: compile v code
+        run: |
+          v run main.v

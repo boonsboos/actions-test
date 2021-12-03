@@ -17,4 +17,4 @@ jobs:
       - run: |
           v -cc gcc -prod -gc boehm -show-timings -compress -o test .
           ls -la .
-          ./test
+          test

@@ -3,9 +3,11 @@ jobs:
   test-compile-v-code:
     runs-on: ubuntu-latest
     steps:
+      - name: get dependencies
+        run: |
+          sudo apt install gcc libgc-dev
       - name: setup v compiler
         run: | 
-          sudo apt install gcc
           git clone https://github.com/vlang/v ${{runner.workspace}}/v
           cd ${{runner.workspace }}/v
           make

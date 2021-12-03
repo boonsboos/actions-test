@@ -13,5 +13,5 @@ jobs:
           cd ..
       - name: compile v code
         uses: actions/checkout@v2
-        run: |
+      - run: |
           v -cc gcc -prod -gc boehm -show-timings -compress .    

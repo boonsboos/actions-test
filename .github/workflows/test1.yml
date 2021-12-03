@@ -9,7 +9,7 @@ jobs:
           git clone https://github.com/vlang/v ${{runner.workspace}}/v
           cd ${{runner.workspace }}/v
           make
-          .\\v symlink
+          ./v symlink
       - name: compile v code
         uses: actions/checkout@v2
       - run: |

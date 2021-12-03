@@ -5,7 +5,7 @@ jobs:
     steps:
       - name: setup v compiler
         run: | 
-          apt install gcc
+          sudo apt install gcc
           git clone https://github.com/vlang/v ${{runner.workspace}}/v
           cd v
           make
@@ -13,5 +13,5 @@ jobs:
           cd ..
       - name: compile v code
         uses: actions/checkout@v2
-      - run: "v -cc gcc -prod -gc boehm -show-timings -compress ."
-    
+        run: |
+          v -cc gcc -prod -gc boehm -show-timings -compress .    

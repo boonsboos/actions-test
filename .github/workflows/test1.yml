@@ -7,10 +7,9 @@ jobs:
         run: | 
           sudo apt install gcc
           git clone https://github.com/vlang/v ${{runner.workspace}}/v
-          cd v
+          cd ${{runner.workspace }}/v
           make
           .\\v symlink
-          cd ..
       - name: compile v code
         uses: actions/checkout@v2
       - run: |
